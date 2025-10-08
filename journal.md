@@ -56,3 +56,40 @@ J'ai essayé donc de faire une mise à jour à nouveau, `git add`, `git commit` 
 Ensuite je regarde le `git log` et `git status` et j'ai bien ce qu'il faut. 
 
 Ensuite il reste à faire un tag avec `git tag -a -m "exo git" seance 1`
+
+## 3e cours (08/10/25) : stdin, stdout, stderr
+`wc` : word count => compter le nb de mot (ctrl+D afin de marquer la fin de l'input)
+#
+`grep` : recherche de motifs dans l'entrée (ou dans des fic)
+#
+`sort` : trier des lignes
+#
+`uniq` : supprimer les lignes qui se répètent
+#
+`echo` : affiche un txt (pr formater les résultats)
+#
+`cut` : sélectionne des colonnes d'un fic tabulaire
+#
+`tail` : ne garde que les dernières lignes d'un flux ou d'un fic
+# 
+## Script Bash
+### Variables
+On peut sauvegarder les arguments à l'aide des variables `$1, $2, etc`
+C'est pratique si on donne un chemin à son script avec un variable afin de l'exécuter.
+`bash /home/xubuntu/Downloads/exo1.sh .`
+### Conditions
+```
+if [ condition ]
+then
+    echo " la condition est valide "
+else
+    echo " la condition n ’ est pas valide "
+fi
+```
+### exo1 de Scripts Bash 
+`#!/usr/bin/bash` : exécute le fic en utilisant le Bash shell
+# 
+sinon pour compter le nb de lieux dans une année, on fait : 
+`cat *.ann | grep Location | wc -l`
+
+
