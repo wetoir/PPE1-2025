@@ -97,6 +97,7 @@ sinon pour compter le nb de lieux dans une année, on fait :
 
 ## 5e cours (22/10/25) : html
 On corrige un peu de bash au début avant d'attaquer la partie web.
+
 html 
 HTTP = un protocole qui permet de communiquer avec le WWW (world wide web).
 
@@ -116,3 +117,64 @@ HTTP = un protocole qui permet de communiquer avec le WWW (world wide web).
 ```
 
 ### lynx : un nav en terminal
+Installation de Lynx
+`lynx plurital.org` commande pour aller sur le site plurital
+`up et down ou tab` pour déplacer sur le site
+`entrer` pour entrer
+`Q` pour quitter
+`left et right` pour retour sur page préc ou contraire
+
+### crawl avec lynx
+(uniquement du text et des liens)
+2 options :
+1. récup le contenu contextuel d'une page pour l'afficher (sans navigation) `-dump`
+2. retirer la liste des liens d'une page à l'affichage `-nolist`
+3. afficher seulement la liste des liens `-listonly`
+
+`seq 1 7 | shuf | head -1` pour voir qui interroge
+
+`lynx -dump https://...` = option 1
+`lynx -dump -nolist https://...` = option 2
+`lynx -dump -listonly https://...` = option 3s
+
+Dans une page man de terminal, tape `/` puis le terme à chercher.f
+
+### wget et cURL 
+wget télécharge un fic sur ordi 
+et cURL affiche tout sur le terminal
+
+`sudo apt install curl`
+`curl plurital.org` -> récup la page web en mode html. 
+=> récup les métadonnées sur la page web intéressée (le code par ex) 
+-> voir si la page web est valide ou pas.
+`curl plurital.org | less` -> navigue sur la page obtenue
+`curl google.com` -> code 301 => adresse changée -> www.google.com (veille héritage)
+
+`curl -i` : entête des métadonnées (date, location, expiration, le code de réponse ...)
+`curl -L` : suivre le déplacement si ancienne adresse
+ex : `curl -iL google.com` : deux entête, une donne code 301 puis l'autre code 200 (redirigé vers www.google.com). En entête, Content-Type:...; charset=ISO-8859-1 (alphabet latin) alors que dans head de html, charset = UTF-8 cela peut expliquer par le fait que sur cette page y'a pas de caratères spécial de UTF-8 donc il dit que c'est de latin seuelemtn (qui est englobé dans UTF-8) dans l'entête.
+`curl -o` : mettre output dans un fic destiné.
+
+### Transition mini-projet
+Préparation au travail en groupe
+-> récup du corpus sur internet
+.tsv puis page web html.
+Etapes : récup d'un fic -> écrire sur le terminal des info de .tsv récupéré -> transformer dans une page web
+
+### Editeurs
+Kate
+Helix
+vscodium
+neovim
+
+Avantages : 
+Coloration syntaxique
+Complétion du code
+Linter : détecte une partie du code même av exécution (analyse statique)
+LSP (Language Server Protocol) : communique avec le serveur du langage utilisé afin de faire les features préc
+#### un Linter pour bash : shellcheck
+`sudo apt install shellcheck`
+#### LSP pour bash : bash-language-server
+d'abord nodej et npm
+puis installer bash-language-server avec npm
+-> consultuer la documentation sans sortir de l'éditeur (espace jsp quoi)
