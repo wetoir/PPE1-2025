@@ -92,4 +92,27 @@ fi
 sinon pour compter le nb de lieux dans une année, on fait : 
 `cat *.ann | grep Location | wc -l`
 
+## 4e cours (15/10/25) : correction tp bash
 
+
+## 5e cours (22/10/25) : html
+On corrige un peu de bash au début avant d'attaquer la partie web.
+html 
+HTTP = un protocole qui permet de communiquer avec le WWW (world wide web).
+
+### Schéma de HTTP :
+1. URL envoyé par user au navigateur
+2. Requête HTTP envoyé par le nav au serveur web
+3. Serveur web envoie réponse HTTP au navi
+4. Le navi envoie la page web à l'user
+
+### Nomenclature des codes HTTP 
+```
+1xx : infomation
+200 : réussite 
+3xx : redirections (ex : envoie à une nouvelle page valide depuis l'ancienne adresse (http:... -> https://... mieux sécurisé))
+4xx : erreurs du client (ex : 404 page non trouvée)
+5xx : erreur du serveur (ex : inscription administrative à P3)
+```
+
+### lynx : un nav en terminal
