@@ -42,7 +42,7 @@ Puis on fait la configuration de notre git avec git config.
 
 `git log` pour voir l'ensemble des commit
 
-## exo git 
+### exo git 
 J'ai suivi ce qu'il faut faire. à l'étape où il faut vérifier si je suis en retard avec le dépôt à distance, j'ai utilisé `git fetch` afin de récupérer les métadonnées du dépôt distance, puis `git status` pour voir si j'ai du retard. 
 Effectivement, on m'a indiqué je suis en retard car le fichier `journal.md` n'existe pas sur le dépôt local.
 
@@ -59,20 +59,20 @@ Ensuite il reste à faire un tag avec `git tag -a -m "exo git" seance 1`
 
 ## 3e cours (08/10/25) : stdin, stdout, stderr
 `wc` : word count => compter le nb de mot (ctrl+D afin de marquer la fin de l'input)
-#
+###
 `grep` : recherche de motifs dans l'entrée (ou dans des fic)
-#
+###
 `sort` : trier des lignes
-#
+###
 `uniq` : supprimer les lignes qui se répètent
-#
+###
 `echo` : affiche un txt (pr formater les résultats)
-#
+###
 `cut` : sélectionne des colonnes d'un fic tabulaire
-#
+###
 `tail` : ne garde que les dernières lignes d'un flux ou d'un fic
-# 
-## Script Bash
+### 
+### Script Bash
 ### Variables
 On peut sauvegarder les arguments à l'aide des variables `$1, $2, etc`
 C'est pratique si on donne un chemin à son script avec un variable afin de l'exécuter.
@@ -88,11 +88,12 @@ fi
 ```
 ### exo1 de Scripts Bash 
 `#!/usr/bin/bash` : exécute le fic en utilisant le Bash shell
-# 
+### 
 sinon pour compter le nb de lieux dans une année, on fait : 
 `cat *.ann | grep Location | wc -l`
 
-## 4e cours (15/10/25) : correction tp bash
+## 4e cours (15/10/25) : correction tp bash scripts
+Regarder les codes faits pour ce tp. Et puis regarder lastCodeBash.sh pour les commentaires.
 
 
 ## 5e cours (22/10/25) : html
