@@ -179,3 +179,45 @@ LSP (Language Server Protocol) : communique avec le serveur du langage utilisé 
 d'abord nodej et npm
 puis installer bash-language-server avec npm
 -> consultuer la documentation sans sortir de l'éditeur (espace jsp quoi)
+
+## miniprojet (27/10/25) :
+### Ex 1 : lire les lignes d'un fichier en bash
+1. On ne fait pas cat "../urls/fr.txt" | while read ... 
+-> afin de ne pas relire le fichier deux fois et qu'on puisse mieux manipuler les variables dans la boucle car sinon pas sûr qu'on peut stocker la valeur d'un sous-shell créé par cat et pipe
+
+2. Pour transformer "../urls/fr.txt" en param du script
+et valider l'argument 
+-> `FIC=$1` et puis créer une condition pour avoir exactement 1 argument 
+
+3. affichier le numéro de ligne av chq URL (sur la même ligne)
+et séparer les valeurs par des tabulations
+-> `echo -e "${COMPTEUR}\t${LIEN}"`
+Option -e de echo permet à shell d'interpréter \t comme une tabulation
+
+### Ex 2 : récupérer les métadonnées de collecte 
+Afin de faire la totalité de cette exercice j'ai essayé de faire une copie brute du site en html avec `mktemp` afin d'éviter 
+envoyer trop de requête à un site et prends un code 429.
+Cependant le résultat obtenu avec cette façon de faire est différent à celui obtenu normalement au niveau de nombre de mots.
+Donc j'ai décidé de ne pas le poursuivre et garde la version qui
+marche bien même s'il faut envoyer 2 requêtes à chaque site dans la boucle. 
+Les commandes utilisées sont :
+`echo -e` : comme dit au-dessus 
+
+`grep -e 'expr1' -e 'expr2'` : une recherche de plusieurs patterns 
+
+`head -n 1` : prendre le premier résultat 
+
+`tail -n 1` : prendre le dernier résultat 
+
+`cut -d 'delimiter' -f2` :  couper le texte à chaque délimiteur et prendre le 2e 
+
+`lynx -dump -nolist` : donne le contenu textuel du site sans liste de liens
+
+`curl -siL` : 
+    `-s` : silent mode sans la barre de progression
+    `-i` : entête d'info d'un site
+    `-L` : redirige vers la nouvelle page si existe
+
+`wc -w` : compter le nombre de mots
+
+Regarder le fichier miniprojet.sh pour mieux comprendre.
