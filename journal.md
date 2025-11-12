@@ -221,3 +221,48 @@ Les commandes utilisées sont :
 `wc -w` : compter le nombre de mots
 
 Regarder le fichier miniprojet.sh pour mieux comprendre.
+
+## miniprojet2 (11/11/25) :
+Au début, je croyais il fallait faire un autre fichier .sh pour le miniprojet2. Ce que j'ai fait mais au final ce qu'on devrai faire c'est de bien modifier le fichier miniprojet.sh afin d'obtenir le résultat désiré, c'est à dire un fichier html qui montre le résultat obtenu lors du 1er miniprojet. 
+Cependant j'ai fait un fichier .sh indépendamment et puis j'ai commenté son code dans mon fichier miniprojet.sh. Donc si on exécute mon code telquel, on obtiendrait pas le résultat voulu. Pour obtenir ce qu'on veut il faut créer un nouveau fichier .sh et puis copier et décommenter le code du miniprojet2 dedans. 
+
+## 7ème cours (12/11/25) :
+Correction de miniprojet2.
+Puis création d'une page web à partir de sa page github pour le miniprojet3. 
+### HTML :
+Quelques balises:
+    `<p></p>` : un paragraphe
+    `<h1></h1>` : titres
+    `<b></b>` : gras
+    `<i></i>` : italic
+    `<ul></ul>` : les points
+    
+### CSS : feuille de style
+On peut la mettre directement dans une balise, dans l'entête d'un fic HTML, dans un fic à part.
+`<p style="color:red">`
+Pour faire un lien entre le fichier HTML et le fic CSS, on utilise `<link rel="stylesheet" href="chemin/vers/fic/CSS">`
+### Bulma CSS : permet de styler HTML facilement
+Changer de classes et de modifieurs seulement. 
+Exemples dans le dossier exempliers de PPE-2526. A regarder la documentation de Bulma.io.
+### Expressions régulières (regex)
+Valider des formats
+Extraire les infos dans un txt
+Rechercher et remplacer du txt
+`https://regex101.com`
+Les métacaractères : 
+    `.` : un 
+    `+` : un ou plusieurs
+    `?` : un ou zéro
+    `*`: zéro ou plusieurs 
+Classes de caractères [] :
+    [abc]
+    [a-z]
+    [digit] 
+    etc
+Les métacaractères de frontières (ancres) :
+    `$` : la fin
+    `^` : le début
+    `\b` : space (frontière de mot existe)
+    `\B` : absence de frontière
+Quantifieurs :
+    `{n, m}` : entre n et m occurences

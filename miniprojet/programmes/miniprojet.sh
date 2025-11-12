@@ -81,58 +81,27 @@ do
 	echo -e "${CPT}\t${line}\t${CODE}\t${ENCODAGE}\t${NBMOTS}" 1>>../tableaux/tableau-fr.tsv
 done < $FICHIER_URLS_CHEMIN
 
-
-# Essaie avec un fichier temporaire qui donne pas vraiement un résultat fiable
-# FICHIER_URLS_CHEMIN=$1
-# CPT=-1
-# CODE=""
-# ENCODAGE=""
-# NBMOTS=0
-# SITE=""
-# TEMPSITE=(mktemp)
-# while read -r line;
-# do 
-#     # SITE=$(curl -siL ${line} | grep -e HTTP/ -e charset) echo "$SITE" puis chercher charset et code marche avec ça mais pas lynx donc besoin TempSite mais résultat pas très positive
-# 	curl -siL ${line} -o "$TEMPSITE"
-# 	CODE=$(grep HTTP/ "$TEMPSITE" | cut -d ' ' -f2 | head -n 2 | tail -n 1)
-# 	CPT=$((CPT + 1))
-# 	ENCODAGE=$(grep charset "$TEMPSITE" | tail -n 1 | cut -d '"' -f2) 
-#     NBMOTS=$(lynx -dump -nolist "$TEMPSITE" | wc -w)
-# 	echo -e "$CPT\t${line}\t$CODE\t$ENCODAGE\t$NBMOTS" 1>>../tableaux/tableau-fr.tsv
-# done < $FICHIER_URLS_CHEMIN
-
-
-
-### Miniprojet2
-# #!/usr/bin/bash
-
-# # vérifie si on a bien 2 arguments 
-# if [ $# -ne 2 ]; then
-#     echo "Usage: $0 input.tsv output.html"
-#     exit 1
-# fi
-
-# INPUT=$1
-# OUTPUT=$2
+# INPUT=../tableaux/tableau-fr.tsv
+# OUTPUT=../tableaux/tableau-fr.html
 
 # # Début du fichier HTML; cat > "..." crée le fic (ou l'écrase s'il existe déjà)
-# cat > "$OUTPUT" <<EOF # <<EOF ... EOF : bloc multi-lignes
+# cat > $OUTPUT <<EOF # <<EOF ... EOF : bloc multi-lignes
 # <html>
 # <head>
 #     <meta charset="UTF-8" />
 # </head>
 # <body>
-# <table border="1"> 
+# 	<table border="1"> 
 # EOF # border="1" pour avoir des bordures 
 
 # # Lecture du TSV -> transformation en lignes HTML; IFS=$'\t' dit à read que le séparateur est une tabulation
 # while IFS=$'\t' read -r ordre lien code encodage nbmots; do # lire les 5 colonnes 
-#     echo "<tr><td>$ordre</td><td>$lien</td><td>$code</td><td>$encodage</td><td>$nbmots</td></tr>" >> "$OUTPUT" # >> concatène au fic output.html sans l'écraser
-# done < "$INPUT" # lire le fic.tsv
+#     echo "<tr><td>$ordre</td><td>$lien</td><td>$code</td><td>$encodage</td><td>$nbmots</td></tr>" >> $OUTPUT # >> concatène au fic output.html sans l'écraser
+# done < $INPUT # lire le fic.tsv
 
 # # Fin du fichier HTML; rajouter la fin du fic html
-# cat >> "$OUTPUT" <<EOF
-# </table>
+# cat >> $OUTPUT <<EOF
+# 	</table>
 # </body>
 # </html>
 # EOF
