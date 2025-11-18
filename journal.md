@@ -224,7 +224,7 @@ Regarder le fichier miniprojet.sh pour mieux comprendre.
 
 ## miniprojet2 (11/11/25) :
 Au début, je croyais il fallait faire un autre fichier .sh pour le miniprojet2. Ce que j'ai fait mais au final ce qu'on devrai faire c'est de bien modifier le fichier miniprojet.sh afin d'obtenir le résultat désiré, c'est à dire un fichier html qui montre le résultat obtenu lors du 1er miniprojet. 
-Cependant j'ai fait un fichier .sh indépendamment et puis j'ai commenté son code dans mon fichier miniprojet.sh. Donc si on exécute mon code telquel, on obtiendrait pas le résultat voulu. Pour obtenir ce qu'on veut il faut créer un nouveau fichier .sh et puis copier et décommenter le code du miniprojet2 dedans. 
+Cependant j'ai fait un fichier .sh indépendamment et puis j'ai commenté son code dans mon fichier miniprojet.sh. Donc si on exécute mon code telquel, on obtiendrait pas le résultat voulu. Pour obtenir ce qu'on veut il faut créer un nouveau fichier .sh et puis copier et décommenter le code du miniprojet2 dedans. Et enlever aussi les commentaires et les espaces après les `EOF` sinon il va produire une erreur car bash essaie de lire `EOF #qqc`. 
 
 ## 7ème cours (12/11/25) :
 Correction de miniprojet2.

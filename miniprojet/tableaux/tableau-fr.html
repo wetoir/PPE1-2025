@@ -1,18 +1,87 @@
 <html>
-<head>
-    <meta charset="UTF-8" />
-</head>
-<body>
-	<table border="1"> 
-EOF # border="1" pour avoir des bordures 
+	<head>
+		<meta charset=\"UTF-8\">
+	</head>
 
-# Lecture du TSV -> transformation en lignes HTML; IFS=$'\t' dit à read que le séparateur est une tabulation
-while IFS=$'\t' read -r ordre lien code encodage nbmots; do # lire les 5 colonnes 
-    echo "<tr><td></td><td></td><td></td><td></td><td></td></tr>" >> ../tableaux/tableau-fr.html # >> concatène au fic output.html sans l'écraser
-done < ../tableaux/tableau-fr.tsv # lire le fic.tsv
-
-# Fin du fichier HTML; rajouter la fin du fic html
-cat >> ../tableaux/tableau-fr.html <<EOF
-	</table>
-</body>
+	<body>
+		<table border="2">
+			<tr>
+				<th>numero</th>
+				<th>URL</th>
+				<th>code</th>
+				<th>encodage</th>
+				<th>nombre de mots</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>https://fr.wikipedia.org/wiki/Robot</td>
+				<td>200</td>
+				<td>UTF-8</td>
+				<td>5800</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>https://fr.wikipedia.org/wiki/Robot_de_cuisine</td>
+				<td>200</td>
+				<td>UTF-8</td>
+				<td>1280</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>fr.wikipedia.org/wiki/Robot_d%27indexation</td>
+				<td>200</td>
+				<td>UTF-8</td>
+				<td>1901</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>https://fr.wikipedia.org/wiki/Bot_informatique</td>
+				<td>200</td>
+				<td>UTF-8</td>
+				<td>2702</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>https://fr.wikipedia.org/wiki/Atlas_(robot)</td>
+				<td>200</td>
+				<td>UTF-8</td>
+				<td>1286</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>https://roboty.magistry.fr</td>
+				<td>000</td>
+				<td>N/A</td>
+				<td>1286</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>https://fr.wikipedia.org/wiki/Robot_(Leonard_de_Vinci)</td>
+				<td>404</td>
+				<td>UTF-8</td>
+				<td>543</td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>https://fr.wiktionary.org/wiki/robot</td>
+				<td>200</td>
+				<td>UTF-8</td>
+				<td>4932</td>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td>https://fr.wikipedia.org/wiki/Protocole_d%27exclusion_des_robots</td>
+				<td>200</td>
+				<td>UTF-8</td>
+				<td>1260</td>
+			</tr>
+			<tr>
+				<td>10</td>
+				<td>https://fr.wikipedia.org/wiki/Robotique</td>
+				<td>200</td>
+				<td>UTF-8</td>
+				<td>13144</td>
+			</tr>
+		</table>
+	</body>
 </html>
