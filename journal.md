@@ -225,6 +225,8 @@ Regarder le fichier miniprojet.sh pour mieux comprendre.
 ## miniprojet2 (11/11/25) :
 Au début, je croyais il fallait faire un autre fichier .sh pour le miniprojet2. Ce que j'ai fait mais au final ce qu'on devrai faire c'est de bien modifier le fichier miniprojet.sh afin d'obtenir le résultat désiré, c'est à dire un fichier html qui montre le résultat obtenu lors du 1er miniprojet. 
 Cependant j'ai fait un fichier .sh indépendamment et puis j'ai commenté son code dans mon fichier miniprojet.sh. Donc si on exécute mon code telquel, on obtiendrait pas le résultat voulu. Pour obtenir ce qu'on veut il faut créer un nouveau fichier .sh et puis copier et décommenter le code du miniprojet2 dedans. Et enlever aussi les commentaires et les espaces après les `EOF` sinon il va produire une erreur car bash essaie de lire `EOF #qqc`. 
+#### maj la correction (18/11/25) : 
+Modification la correction donnée par les profs afin d'avoir un bon fichier html en sortie. En prenant en compte ce que j'avais avant. 
 
 ## 7ème cours (12/11/25) :
 Correction de miniprojet2.
@@ -266,3 +268,6 @@ Les métacaractères de frontières (ancres) :
     `\B` : absence de frontière
 Quantifieurs :
     `{n, m}` : entre n et m occurences
+
+## miniprojet3 (18/11/2025) :
+1ère étape : je prends le fic `index.html` de PPE1-2526 et le mets à la racine de mon dossier GitHub. Puis je le modifie un peu afin d'avoir un affichage assez propre (en utilisant le `CSS` de `Bulma`) de et je mets aussi le lien vers le site `tableau-fr.html` de miniprojet2 dans `index.html`. Puis je push sur GitHub comme demandé. 

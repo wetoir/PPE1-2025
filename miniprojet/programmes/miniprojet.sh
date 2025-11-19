@@ -14,7 +14,7 @@ OUTPUT="../tableaux/tableau-fr.html"
 cat > "$OUTPUT" <<EOF
 <html>
 	<head>
-		<meta charset=\"UTF-8\">
+		<meta charset="UTF-8">
 	</head>
 
 	<body>
