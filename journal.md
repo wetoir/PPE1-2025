@@ -295,3 +295,15 @@ J'ai changé le code HTML injecté au fichier `tableau-fr.html` lors de sa créa
 Juste le fait de bien espacer les tabulations pour les balises qui n'est pas très instinctif. J'ai du essayé quelques fois avant d'avoir le résultat souhaité. 
 Mais en soit, cela ne change rien niveau le code ni le site. 
 
+## cours 8 (19/11/2025) :
+On a commencé avec la correction du miniprojet3.
+Puis on enchaîne sur `regex101.com`
+Pour trouver les urls dans un texte (sans `www`):
+`https?:\/\/[^\s]+([a-zA-Z]){2,}\/?`
+Avec les `www` au début à la place de `https://` :
+(https?:\/\/|www\.)[^\s]+([a-zA-Z]){2,}\/?
+Découper les urls en parties :
+`(https?:\/\/|www\.)([a-zA-Z]+\.)+[a-zA-Z]{2,}(\/[^\s]+)*[a-zA-Z0-9]\/?`
+Pour capturer aussi `https://impacts-....org/` dans le texte de `mail-list-hr.txt` :
+`(https?:\/\/|www\.)([-0-9a-zA-Z]+\.)+[a-zA-Z]{2,}(\/[^\s]+)*[a-zA-Z0-9]\/?`
+
