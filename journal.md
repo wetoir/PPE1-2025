@@ -297,6 +297,7 @@ Mais en soit, cela ne change rien niveau le code ni le site.
 
 ## cours 8 (19/11/2025) :
 On a commencé avec la correction du miniprojet3.
+### grep 
 Puis on enchaîne sur `regex101.com`
 Pour trouver les urls dans un texte (sans `www`):
 `https?:\/\/[^\s]+([a-zA-Z]){2,}\/?`
@@ -306,4 +307,45 @@ Découper les urls en parties :
 `(https?:\/\/|www\.)([a-zA-Z]+\.)+[a-zA-Z]{2,}(\/[^\s]+)*[a-zA-Z0-9]\/?`
 Pour capturer aussi `https://impacts-....org/` dans le texte de `mail-list-hr.txt` :
 `(https?:\/\/|www\.)([-0-9a-zA-Z]+\.)+[a-zA-Z]{2,}(\/[^\s]+)*[a-zA-Z0-9]\/?`
+`grep -P` compatible avec ce qu'on fait sur `regex101.com` :
+`cat mail-liste-hn.txt | grep -P '(https?:\/\/|www\.)([-0-9a-zA-Z]+\.)+[a-zA-Z]{2,}(\/[^\s]+)*' -o`
+Capter tous les mots/caractères sauf ceux avec accents ou les trucs non pas en ASCII :
+`[A-z]*` même les trucs comme `"[]_^`"`
+Le mieux c'est de faire :
+`[a-zA-Zéèàêâùÿïüë]*`
+En unicode :
+Pour les cara chinois :
+`grep -P '\p{han}*'`
+Pour les cara grecs :
+`grep -P '\p{lo}*'`
+Pour les lettres :
+`grep -P '\p{l}+'`
+Pour les mots qui commencent par un majuscule :
+`grep -P '\p{lu}\p{ll}+' -o`
+#### grep -P '\p...' et grep -P '\P' sont différents
+### sed : éditeur de texte en ligne de commande 
+Substitution de 'moulins' suivi de '3 caractères' avec '3 caractères' et 'MOULINS' à droit :
+`cat pg16066.txt | grep moulins | sed 's/moulins \(...\)/ \1 MOULINS/'`
+ex : 
+`celle du Port-Lapice[23]; d'autres, celle des moulins à vent.` '(3 caractères ici est : `à v`)
+`celle du Port-Lapice[23]; d'autres, celle des  à v MOULINSent.`
 
+`s/.../.../` est la syntaxe de substitution de sed (chercher et remplacer).
+`moulins \(...\)` : cela cherche le mot "moulins" suivi de trois caractères (en utilisant des parenthèses pour capturer ces trois caractères dans un groupe, qui sera référencé par \1).
+`\1 MOULINS `: cette partie remplace "moulins" et les trois caractères suivants par "MOULINS", tout en réintégrant les trois caractères capturés. Par exemple, si une ligne contient "moulins abc", elle deviendra "abc MOULINS".
+
+### Git : un peu plus loin
+Pour les erreurs :
+`git reset` -> permet de faire marche arrière (revient à la version "HEAD" du dépôt (annule tous les add mais pas les commits))
+`git revert` -> pas cette fois
+`git stash`
+`git checkout` -> au S2 ? (se téléporter directement à un état donné (commit ou fic))
+Fonctionnent tjs contrairement à `pull`
+`HEAD` : où vous êtes actuellement
+`tag` : une autre référence à une commit
+`~N` :
+`^N`: 
+
+`git diff` : voir les différents HEAD
+`git stash push` : cacher les modifs pour pouvoir pull et puis on peut le ressortir plus tard 
+(`git status` montre qu'on est à jour)
