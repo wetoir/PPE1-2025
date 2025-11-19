@@ -270,4 +270,23 @@ Quantifieurs :
     `{n, m}` : entre n et m occurences
 
 ## miniprojet3 (18/11/2025) :
-1ère étape : je prends le fic `index.html` de PPE1-2526 et le mets à la racine de mon dossier GitHub. Puis je le modifie un peu afin d'avoir un affichage assez propre (en utilisant le `CSS` de `Bulma`) de et je mets aussi le lien vers le site `tableau-fr.html` de miniprojet2 dans `index.html`. Puis je push sur GitHub comme demandé. 
+### 1ère étape : 
+Je prends le fic `index.html` de PPE1-2526 et le mets à la racine de mon dossier GitHub. Puis je le modifie un peu afin d'avoir un affichage assez propre (en utilisant le `CSS` de `Bulma`) de et je mets aussi le lien vers le site `tableau-fr.html` de miniprojet2 dans `index.html`. Puis je push sur GitHub comme demandé. 
+### 2è étape :
+Après le déploiement de la page GitHub, le lien fonctionne bien via la page GitHub du miniprojet. 
+### 3è étape :
+Mise en page des deux fichiers html en utilisant `Bulma`. 
+Structure la partie body de chaque fichier en 3 parties : 
+    - la barre de navigation
+    - la bannière 
+    - le contenu principal
+Quelques options utilisées : 
+`is-centered` : centrer l'élément de la balise qui est utilisée avec cette classe
+`is-small` : la taille de cet élément est petite
+`mb-x` : la marge en bas de cet élément est de taille x (elle est plus grande proportionnelement à x)
+`title` : titre d'un élément (`div` par ex)
+`subtitle` : sous-titre d'un élément
+`card` : pour faire des blocs de style card
+`x-content` : le contenu de ce x-bloc (par ex `card-content`)
+etc.
+
