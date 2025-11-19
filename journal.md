@@ -289,4 +289,9 @@ Quelques options utilisées :
 `card` : pour faire des blocs de style card
 `x-content` : le contenu de ce x-bloc (par ex `card-content`)
 etc.
+### 4è étape :
+La génération du fichier `tableau-fr.html` ayant directement le style `Bulma`. 
+J'ai changé le code HTML injecté au fichier `tableau-fr.html` lors de sa création en ajoutant les éléments de Bulma. Il n'y a pas beaucoup de difficulté à ce niveau là vu c'est comme ce qu'on a fait avant pour le `miniprojet2`.
+Juste le fait de bien espacer les tabulations pour les balises qui n'est pas très instinctif. J'ai du essayé quelques fois avant d'avoir le résultat souhaité. 
+Mais en soit, cela ne change rien niveau le code ni le site. 
 
