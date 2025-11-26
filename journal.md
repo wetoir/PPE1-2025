@@ -349,3 +349,62 @@ Fonctionnent tjs contrairement à `pull`
 `git diff` : voir les différents HEAD
 `git stash push` : cacher les modifs pour pouvoir pull et puis on peut le ressortir plus tard 
 (`git status` montre qu'on est à jour)
+
+
+## cours 9 (26/11/2025) : environnement virtuel
+### invironnement virtuel
+Bcp d'avantages mais le plus grand c'est de pouvoir tout supprimer sans toucher au système Python si qqc va mal.
+### uv, venv, pip
+`pip` : installer les librairies Python
+`venv` : créer un environnement virtuel
+`uv` : modernise les interfaces de pip et fait le role de `venv`
+
+`uv venv $HOME/venvs/plurital` : créer un env virtuel
+`source $HOME/venvs/plurital/bin/activate` : l'activer
+`whereis python3` : pour trouver le système Python actuel/locate the binary, source, and manual page files for a command
+`which python3` : se situe le Python actuel/locate a command
+`uv pip --help` : man de uv pour ses commandes
+`uv pip install wordcloud` : installer wordcloud dans l'env virtuel
+`wordcloud_cli --help` : man de wordcloud
+
+`requirements.txt` donne les dépendances à d'autres paquets Python
+`https://pypi.org` donne les paquets installables
+
+`uv pip install jupyter` : installer jupyterlab dans un env virtuel pour mieux gérer son projet
+`jupyter lab` : lancer jupyter-lab
+
+### wordcloud
+`wordcloud_cli --text ../PPE1-2526/docs/pg16066.txt --imagefile pg16066.png` : ex de wordcloud
+--> les mots non lexicaux qui nous intéressent pas, faut les faire disparaître
++++> On fait un fichier de stopwords pour ne plus afficher les mots non lexicaux
+Par ex : 
+`echo "le de en à" > stopwords.txt`
+`wordcloud_cli --text ../PPE1-2526/docs/pg16066.txt --imagefile pg16066.png --stopwords stopwords.txt`
+On a d'autres options comme faire ça en forme de coeur --> à voir 
+`--mask file` `background color`
+
+### tokenization
+`uv pip install -r requirements.txt` = `uv pip install thulac`  : chinois
+`python3 tokenize_chinese.py chinois.txt > chinois_seg.txt` 
+= `cat chinois.txt | python tokenize_chinese.py > chinois_seg.txt`: segmentation
+=> différence entre `head chinois.txt` et `head chinois_seg.txt`
+`cat coréen.txt | python3 tokenize_ko.py` : pour coréen
+`cat japonais.txt | python3 tokenize_japanese.py` : pour japonais
+~~`cat japonais.txt | tr ' ' '\n' | sort -u`
+`cat vietnamien.txt | python3 tokenize_vietnamese.py` : remplacer les espaces par les underscores
+`cat vietnamien.txt | python3 tokenize_vietnamese.py | tr ' ' '\n' | sort -u` : liste de mots qui ont du sens au moins
+ 
+### PALS
+4 bulles, 2 bleus, 2 rouges
+tirer aléatoirement, 2 bulles à la fois
+pourcentages :
+1/6 de tomber sur 2 bulles de même couleur
+4/6 ou 2/3 de tomber sur 2 bulles de couleurs différentes
+--> appliquer ça au corpus (loi hypergéométrique)
+`python3 cooccurrents.py --help` : man de coocurrences.py
+`python3 cooccurrents.py --target robot ../PPE1-2526/docs/robots.txt -N 10` : limiter le nb de résultats
+`python3 cooccurrents.py --target robot ../PPE1-2526/docs/robots.txt -N 10 -s i` : insensif à la casse
+`python3 cooccurrents.py --target "robots?" fr-*.txt -N 10 -s i --match-mode=regex` : utilisation avec regex 
+`python3 cooccurrents.py --target "robot.*" fr-*.txt -N 10 -s i --match-mode=regex`
+`less fr-1.txt` : segmenter et lire le fic mot par mot
+`python3 cooccurrents.py --target "robot.*" fr-*.txt -s i --match-mode=regex > resCooccu.tsv` : l'exploration du corpus
