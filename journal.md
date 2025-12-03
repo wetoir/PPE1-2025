@@ -418,4 +418,6 @@ Puis on a parlé de robots.txt afin de connaître les limites de wikipédia sur 
 -> éviter d'avoir un DDOS en plein face car trop de curl ou équivalences provenant des scrawlers.
 --> un peu de respect car "règles" de politesse mais plutôt suggestions.
 
-Ensuite on commence à travailler sur le projet
+Ensuite on commence à travailler sur le projet.
+On a discuté sur quel mot choisir. On a deux mots "Homme" et "image", et au final on a choisi "image" après avoir parlé avec le prof.
+On a fait aussi une structure du projet. 
