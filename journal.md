@@ -408,3 +408,14 @@ pourcentages :
 `python3 cooccurrents.py --target "robot.*" fr-*.txt -N 10 -s i --match-mode=regex`
 `less fr-1.txt` : segmenter et lire le fic mot par mot
 `python3 cooccurrents.py --target "robot.*" fr-*.txt -s i --match-mode=regex > resCooccu.tsv` : l'exploration du corpus
+
+## cours10 (03/12/2025): projet et robots.txt
+On a parlé du projet final au début.
+Fic dans contxt différent de concordance, on peut prendre 2 ou 3 lignes av et après la phrases en question.
+Concordance c'est environ 4-gram au tour du mot en question.
+
+Puis on a parlé de robots.txt afin de connaître les limites de wikipédia sur le sujet de scrawlers.
+-> éviter d'avoir un DDOS en plein face car trop de curl ou équivalences provenant des scrawlers.
+--> un peu de respect car "règles" de politesse mais plutôt suggestions.
+
+Ensuite on commence à travailler sur le projet
