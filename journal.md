@@ -421,3 +421,16 @@ Puis on a parlé de robots.txt afin de connaître les limites de wikipédia sur 
 Ensuite on commence à travailler sur le projet.
 On a discuté sur quel mot choisir. On a deux mots "Homme" et "image", et au final on a choisi "image" après avoir parlé avec le prof.
 On a fait aussi une structure du projet. 
+
+## cours11 (10/12/2025) : 
+### projet 
+récupération des liens sur le mot "images" ou "hinh anh"
+### cours
+###### Date limite pour le projet : 03/01/2025
+Et archiver le dépôt de GitHub avant de rendre la version finale
+Continuation sur tokenization.
+#### conversion d'encodage du txt:
+`cat chinois.txt | iconv -f UTF-8 -t GB2312 | grep "hanji"`
+`-f` : de cet encodage source
+`-t` : convertir à cet encodage cible
+
