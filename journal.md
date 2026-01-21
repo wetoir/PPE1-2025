@@ -434,3 +434,50 @@ Continuation sur tokenization.
 `-f` : de cet encodage source
 `-t` : convertir à cet encodage cible
 
+
+# PPE 2
+## cours1 (21/12/2026) : GitLab
+### Branches :
+learngitbranching.js.org
+1. révisions
+2. branches 
+3. merge
+4. exercices
+
+`git branch [-options...]` <nom-branche> [référence]: seul affiche où on est; créer une branche depuis une référence, normalement c'est la HEAD (main par défaut)
+`--list` ou rien : liste des branches
+`-m/-c` : renommer/copier une branche
+`-d` : supprimer une branche
+
+### Changer de branche : git checkout et git switch
+`git checkout <branche>` : réf historique, se téléporter n'importe où (branche, commit, référence, HEAD...)
+`-b` : créer une branche si elle existe pas avec `checkout`
+`git fetch --all` : rapatrier les données de toutes les branches même des autres
+
+*git ignore ts les fichiers non indexés, dont si un fic n'est pas commit sur une branche alors quand on change de branche, il reste telquel, dans aucune branche.*
+
+*origin = point de syncronisation, souvent un github ou un gitlab*
+
+`git restore` : changer l'état du fic
+`git switch` : plus précise mais tjs d'instabilités, changer de branche
+*ces deux commandes nées à partir de git checkout*
+`-c` : créer la branche
+
+### Récupérer des changements d'ailleurs v1 : git merge et git rebase
+`git merge [-options...] <commit>` : créer un commit de merge qui dit qu'on a récupéré les données de qq part
+-> on a deux parents (par ex : branche main et branche dev)
+`git rebase <commit>` : fais comme merge mais comme si on avait qu'une seule branche originale dp le début et donc un seul parent unique
+
+                        O
+                        ^<------|
+                        |       O
+            O           merge   ^
+            ^           |       |
+            |           O       O
+^--rebase-->O           ^       ^
+|           ^           |       |
+O--branche--|           O-------|
+^                       ^
+|                       |
+O                       O
+
